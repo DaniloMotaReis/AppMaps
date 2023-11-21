@@ -50,19 +50,21 @@
             android:src="@drawable/baseline_terrain_24"
             android:text="Terreno" />
 
-        <Button
+        <ImageButton
             android:id="@+id/btnHibr"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="changeMapType"
-            android:text="Hibrido" />
+            app:srcCompat="@drawable/baseline_table_view_24"
+            app:tint="@color/black" />
 
-        <Button
+        <ImageButton
             android:id="@+id/btnNone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="changeMapType"
-            android:text="Nada" />
+            android:layout_weight="1"
+            android:src="@drawable/baseline_browser_not_supported_24" />
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

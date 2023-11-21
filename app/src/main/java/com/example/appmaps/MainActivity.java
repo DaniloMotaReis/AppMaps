@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
         GoogleMapOptions options = new GoogleMapOptions();
 
-        options.mapType(GoogleMap.MAP_TYPE_NORMAL)
+        options.mapType(GoogleMap.MAP_TYPE_HYBRID)
                 .compassEnabled(true);
 
         SupportMapFragment mapFragment = SupportMapFragment.newInstance(options);
