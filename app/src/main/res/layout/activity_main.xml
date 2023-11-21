@@ -62,7 +62,7 @@
             android:id="@+id/btnNone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:onClick="changeMapType"
             android:src="@drawable/baseline_browser_not_supported_24" />
 
     </LinearLayout>
