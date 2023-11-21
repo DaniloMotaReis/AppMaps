@@ -59,6 +59,13 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                 googleMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
             } else if (id == R.id.btnNone) {
                 googleMap.setMapType(GoogleMap.MAP_TYPE_NONE);
+                googleMap.addMarker(new MarkerOptions()
+
+                        .position(new LatLng(48.8584,2.2945))
+                        .title("Você está aqui"));
+
+                LatLng torreEiffel = new LatLng(48.8584, 2.2945);
+                googleMap.addMarker(new MarkerOptions().position(torreEiffel).title("Marcador na Torre Eiffel"));
             }
         }
     }
