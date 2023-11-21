@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
             int id = view.getId();
 
             if (id == R.id.btnNorm){
-                googleMap.setMapType(GoogleMap.MAP_TYPE_TERRAIN);
+                googleMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
             } else if (id == R.id.btnSate){
                 googleMap.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
             } else if (id == R.id.btnTerr) {
