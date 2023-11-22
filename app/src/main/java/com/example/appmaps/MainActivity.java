@@ -38,9 +38,6 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     @Override
     public void onMapReady(@NonNull GoogleMap map) {
         googleMap = map;
-        googleMap.addMarker(new MarkerOptions()
-                .position(new LatLng(0,0))
-                .title("Você está aqui"));
         googleMap.setTrafficEnabled(true);
     }
 
