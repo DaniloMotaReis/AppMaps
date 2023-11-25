@@ -22,7 +22,7 @@
             android:value="AIzaSyCfO_NfjYEYooujqJfoRfwhRwLQsPbFEzw" />
 
         <activity
-            android:name=".MainActivity"
+            android:name=".Map"
             android:exported="false" />
 
         <activity

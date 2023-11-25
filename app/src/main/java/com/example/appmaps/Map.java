@@ -18,12 +18,13 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.GoogleMapOptions;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.tasks.OnSuccessListener;
 
-public class MainActivity extends AppCompatActivity implements OnMapReadyCallback {
+public class Map extends AppCompatActivity implements OnMapReadyCallback {
 
     private GoogleMap googleMap;
     private FusedLocationProviderClient fusedLocationProviderClient;
@@ -58,13 +59,21 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     @Override
     public void onMapReady(@NonNull GoogleMap map) {
         googleMap = map;
+        googleMap.setTrafficEnabled(true);
+        LatLng fatec = new LatLng(-23.598010941769395, -46.92689222302488);
+        googleMap.addMarker(new MarkerOptions()
+                .position(fatec)
+                .title("Fatec Cotia")
+                .icon(BitmapDescriptorFactory
+                        .fromResource(R.drawable.logofatec))
+        );
+
         googleMap.setOnMapLoadedCallback(new GoogleMap.OnMapLoadedCallback() {
             @Override
             public void onMapLoaded() {
                 getLastKnowLocation();
             }
         });
-        googleMap.setTrafficEnabled(true);
     }
 
     public void changeMapType(View view){
