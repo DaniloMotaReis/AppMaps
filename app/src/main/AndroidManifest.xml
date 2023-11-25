@@ -19,9 +19,14 @@
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyCfO_NfjYEYooujqJfoRfwhRwLQsPbFEzw"/>
+            android:value="AIzaSyCfO_NfjYEYooujqJfoRfwhRwLQsPbFEzw" />
+
         <activity
             android:name=".MainActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".SplashScreen"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
