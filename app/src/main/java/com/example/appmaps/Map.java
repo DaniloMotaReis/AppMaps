@@ -25,7 +25,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.tasks.OnSuccessListener;
 
 public class Map extends AppCompatActivity implements OnMapReadyCallback {
-
+    {/*Objetos do mapa, o googleMap é o objeto do map, já o fusedLocationProviderClient está liagado a parte de localização atual*/}
     private GoogleMap googleMap;
     private FusedLocationProviderClient fusedLocationProviderClient;
 
@@ -34,6 +34,7 @@ public class Map extends AppCompatActivity implements OnMapReadyCallback {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        {/* Esse if faz a validação da permissão de localização dentro do aplicativo*/}
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED
                 && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
@@ -43,11 +44,14 @@ public class Map extends AppCompatActivity implements OnMapReadyCallback {
 
         fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this);
 
+        {/* Esse é um objeto utilizado na criação do map para atribuir algumas configurações iniciais nele*/}
         GoogleMapOptions options = new GoogleMapOptions();
 
+        {/*Atribuindo uma opção simples ao objeto*/}
         options.mapType(GoogleMap.MAP_TYPE_HYBRID)
                 .compassEnabled(true);
 
+        {/*Criando o fragmento do mapa e o ligando a fragment do xml*/}
         SupportMapFragment mapFragment = SupportMapFragment.newInstance(options);
         getSupportFragmentManager()
                 .beginTransaction()
@@ -89,13 +93,6 @@ public class Map extends AppCompatActivity implements OnMapReadyCallback {
                 googleMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
             } else if (id == R.id.btnNone) {
                 googleMap.setMapType(GoogleMap.MAP_TYPE_NONE);
-                googleMap.addMarker(new MarkerOptions()
-
-                        .position(new LatLng(48.8584,2.2945))
-                        .title("Você está aqui"));
-
-                LatLng torreEiffel = new LatLng(48.8584, 2.2945);
-                googleMap.addMarker(new MarkerOptions().position(torreEiffel).title("Marcador na Torre Eiffel"));
             }
         }
     }
