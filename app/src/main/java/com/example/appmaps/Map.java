@@ -80,6 +80,7 @@ public class Map extends AppCompatActivity implements OnMapReadyCallback {
         });
     }
 
+    {/*Essa função é a qu faz as troca dos filtros do mapa*/}
     public void changeMapType(View view){
         if(googleMap != null){
             int id = view.getId();
